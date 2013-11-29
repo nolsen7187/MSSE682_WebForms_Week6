@@ -37,3 +37,13 @@ C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week5\MBSDEVBIDA_WebForms\DAL\bin\
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week5\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week5\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.dll
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week5\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\DAL.dll.config
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\DAL.dll
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\DAL.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\EntityFramework.dll
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\EntityFramework.xml
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.dll
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\DAL\obj\Debug\DAL.pdb
