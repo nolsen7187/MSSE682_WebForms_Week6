@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MBSDEVBIDAModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MBSDEVBIDAEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CUSTINVOICEJOURs" EntityType="MBSDEVBIDAModel.CUSTINVOICEJOUR" />
+    <EntitySet Name="CUSTINVOICETRANS" EntityType="MBSDEVBIDAModel.CUSTINVOICETRAN" />
+    <EntitySet Name="CUSTTABLEs" EntityType="MBSDEVBIDAModel.CUSTTABLE" />
+    <EntitySet Name="DATAAREAs" EntityType="MBSDEVBIDAModel.DATAAREA" />
+    <EntitySet Name="MBSBDSALESREPTABLEs" EntityType="MBSDEVBIDAModel.MBSBDSALESREPTABLE" />
+    <EntitySet Name="MBSWBWEBUSERCONTACTs" EntityType="MBSDEVBIDAModel.MBSWBWEBUSERCONTACT" />
+  </EntityContainer>
+  <EntityType Name="CUSTINVOICEJOUR">
+    <Key>
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="SALESID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ORDERACCOUNT" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="INVOICEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SALESBALANCE" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="INVOICEAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="INVOICEID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="SUMTAX" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="MBSPRIMARYSALESREP" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTINVOICETRAN">
+    <Key>
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="INVOICEID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="INVOICEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="INVENTTRANSID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ITEMID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="QTY" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="SALESPRICE" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="LINEAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="PHONE" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ZIPCODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="STATE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="CITY" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="STREET" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="MBSDEPARTMENTCODE" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DATAAREA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MBSBDSALESREPTABLE">
+    <Key>
+      <PropertyRef Name="SALESREPID" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="SALESREPID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MBSWBWEBUSERCONTACT">
+    <Key>
+      <PropertyRef Name="WEBLOGON" />
+      <PropertyRef Name="CONTACTPERSONID" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="WEBLOGON" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="WEBPASSWORD" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACTPERSONID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="SALESREPID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+</Schema>

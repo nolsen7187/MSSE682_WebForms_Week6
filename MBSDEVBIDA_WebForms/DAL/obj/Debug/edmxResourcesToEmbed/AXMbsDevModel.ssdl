@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AXMbsDevModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AXMbsDevModelStoreContainer">
+    <EntitySet Name="CUSTINVOICEJOUR" EntityType="AXMbsDevModel.Store.CUSTINVOICEJOUR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CUSTINVOICETRANS" EntityType="AXMbsDevModel.Store.CUSTINVOICETRANS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CUSTTABLE" EntityType="AXMbsDevModel.Store.CUSTTABLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DATAAREA" EntityType="AXMbsDevModel.Store.DATAAREA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MBSBDSALESREPTABLE" EntityType="AXMbsDevModel.Store.MBSBDSALESREPTABLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MBSWBWEBUSERCONTACT" EntityType="AXMbsDevModel.Store.MBSWBWEBUSERCONTACT" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CUSTINVOICEJOUR">
+    <Key>
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="SALESID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ORDERACCOUNT" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="INVOICEDATE" Type="datetime" Nullable="false" />
+    <Property Name="SALESBALANCE" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="INVOICEAMOUNT" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="INVOICEID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SUMTAX" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="MBSPRIMARYSALESREP" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="DATAAREAID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="CUSTINVOICETRANS">
+    <Key>
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="INVOICEID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="INVOICEDATE" Type="datetime" Nullable="false" />
+    <Property Name="INVENTTRANSID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ITEMID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="QTY" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="SALESPRICE" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="LINEAMOUNT" Type="decimal" Nullable="false" Precision="28" Scale="12" />
+    <Property Name="DATAAREAID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="PHONE" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ZIPCODE" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="STATE" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="EMAIL" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="CITY" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="STREET" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="MBSDEPARTMENTCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="DATAAREAID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="DATAAREA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="MBSBDSALESREPTABLE">
+    <Key>
+      <PropertyRef Name="SALESREPID" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="SALESREPID" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="DATAAREAID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="MBSWBWEBUSERCONTACT">
+    <Key>
+      <PropertyRef Name="WEBLOGON" />
+      <PropertyRef Name="CONTACTPERSONID" />
+      <PropertyRef Name="DATAAREAID" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="EMAIL" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="WEBLOGON" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="WEBPASSWORD" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CONTACTPERSONID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SALESREPID" Type="nvarchar" MaxLength="10" />
+    <Property Name="DATAAREAID" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="RECID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+</Schema>

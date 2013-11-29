@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="839efc4a03ba48b1b8220d2f143328f9" Name="Diagram1">
+        <EntityTypeShape EntityType="AXMbsDevModel.CUSTINVOICEJOUR" Width="1.5" PointX="0.51043652953134688" PointY="9.9565281467309816" />
+        <EntityTypeShape EntityType="AXMbsDevModel.CUSTINVOICETRANS" Width="1.5" PointX="9.5608680423166916" PointY="21.957845906707387" />
+        <EntityTypeShape EntityType="AXMbsDevModel.CUSTTABLE" Width="1.5" PointX="2.0192972524181458" PointY="31.645509496166142" />
+        <EntityTypeShape EntityType="AXMbsDevModel.DATAAREA" Width="1.5" PointX="8.8176743988030015" PointY="1.0257148002394079" />
+        <EntityTypeShape EntityType="AXMbsDevModel.MBSBDSALESREPTABLE" Width="1.5" PointX="6.1397909923176233" PointY="22.984690319273941" />
+        <EntityTypeShape EntityType="AXMbsDevModel.MBSWBWEBUSERCONTACT" Width="1.5" PointX="11.104649506092374" PointY="28.249317212146391" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

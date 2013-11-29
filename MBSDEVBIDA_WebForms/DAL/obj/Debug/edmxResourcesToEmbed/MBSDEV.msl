@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MBSDEVBIDAModelStoreContainer" CdmEntityContainer="MBSDEVBIDAEntities">
+    <EntitySetMapping Name="CUSTINVOICEJOURs">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.CUSTINVOICEJOUR)">
+        <MappingFragment StoreEntitySet="CUSTINVOICEJOURs">
+          <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+          <ScalarProperty Name="SALESID" ColumnName="SALESID" />
+          <ScalarProperty Name="ORDERACCOUNT" ColumnName="ORDERACCOUNT" />
+          <ScalarProperty Name="INVOICEDATE" ColumnName="INVOICEDATE" />
+          <ScalarProperty Name="SALESBALANCE" ColumnName="SALESBALANCE" />
+          <ScalarProperty Name="INVOICEAMOUNT" ColumnName="INVOICEAMOUNT" />
+          <ScalarProperty Name="INVOICEID" ColumnName="INVOICEID" />
+          <ScalarProperty Name="SUMTAX" ColumnName="SUMTAX" />
+          <ScalarProperty Name="MBSPRIMARYSALESREP" ColumnName="MBSPRIMARYSALESREP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTINVOICETRANS">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.CUSTINVOICETRAN)">
+        <MappingFragment StoreEntitySet="CUSTINVOICETRANS">
+          <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+          <ScalarProperty Name="INVOICEID" ColumnName="INVOICEID" />
+          <ScalarProperty Name="INVOICEDATE" ColumnName="INVOICEDATE" />
+          <ScalarProperty Name="INVENTTRANSID" ColumnName="INVENTTRANSID" />
+          <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="SALESPRICE" ColumnName="SALESPRICE" />
+          <ScalarProperty Name="LINEAMOUNT" ColumnName="LINEAMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTTABLEs">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.CUSTTABLE)">
+        <MappingFragment StoreEntitySet="CUSTTABLEs">
+          <ScalarProperty Name="ACCOUNTNUM" ColumnName="ACCOUNTNUM" />
+          <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="MBSDEPARTMENTCODE" ColumnName="MBSDEPARTMENTCODE" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATAAREAs">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.DATAAREA)">
+        <MappingFragment StoreEntitySet="DATAAREAs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MBSBDSALESREPTABLEs">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.MBSBDSALESREPTABLE)">
+        <MappingFragment StoreEntitySet="MBSBDSALESREPTABLEs">
+          <ScalarProperty Name="SALESREPID" ColumnName="SALESREPID" />
+          <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MBSWBWEBUSERCONTACTs">
+      <EntityTypeMapping TypeName="IsTypeOf(MBSDEVBIDAModel.MBSWBWEBUSERCONTACT)">
+        <MappingFragment StoreEntitySet="MBSWBWEBUSERCONTACTs">
+          <ScalarProperty Name="WEBLOGON" ColumnName="WEBLOGON" />
+          <ScalarProperty Name="CONTACTPERSONID" ColumnName="CONTACTPERSONID" />
+          <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+          <ScalarProperty Name="ACCOUNTNUM" ColumnName="ACCOUNTNUM" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="WEBPASSWORD" ColumnName="WEBPASSWORD" />
+          <ScalarProperty Name="SALESREPID" ColumnName="SALESREPID" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
