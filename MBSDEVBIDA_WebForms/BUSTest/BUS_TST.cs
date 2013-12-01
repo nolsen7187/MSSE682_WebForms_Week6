@@ -6,10 +6,10 @@ using BUS;
 namespace BUSTest
 {
     [TestClass]
-    public class UnitTest1
+    public class BUS_TST
     {
         [TestMethod]
-        public void TestMethod1()
+        public void BUS_TST_FacadeAddUser()
         {
             MBSWBWEBUSERCONTACT uIWebUser = new MBSWBWEBUSERCONTACT();
 
@@ -28,6 +28,12 @@ namespace BUSTest
             //Facade newFacade = new Facade(uICustomer, ActionType);
             BUS_Facade newFacade = new BUS_Facade(Class, ActionType);
             newFacade.ProcessRequest();
+        }
+        [TestMethod]
+        public void BUS_TST_FacadeUserPassword()
+        {
+            BUS_Facade newFacade = new BUS_Facade("dbrees", "dbrees");
+            newFacade.ProcessAuthenticationRequest();
         }
     }
 }

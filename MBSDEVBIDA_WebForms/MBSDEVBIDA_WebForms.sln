@@ -13,6 +13,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PRS", "PRS\", "{75619269-A3D6-4843-88C1-7805181E8C4D}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{3a161c36-87a9-4009-b993-ebce4afcaba7}|BUS.dll;{9401591C-122B-4E8E-A8A3-82ED52002F2F}|SVC.dll;{CB5DBA12-278D-4551-BCE5-F5D1B6B8BAF8}|DAL.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/PRS"
 		Debug.AspNetCompiler.PhysicalPath = "PRS\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PRS\"

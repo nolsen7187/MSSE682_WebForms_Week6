@@ -12,10 +12,10 @@ namespace DALTest
 {
     //Week 6
     [TestClass]
-    public class UnitTest1
+    public class DAL_TST
     {
         [TestMethod]
-        public void TestWriteToDataAreaTable()
+        public void DAL_TST_WriteToDataAreaTable()
         {
             AXMbsDevEntities data = new AXMbsDevEntities();
             DATAAREA DA = new DATAAREA();
@@ -26,7 +26,7 @@ namespace DALTest
             data.SaveChanges();
         }
         [TestMethod]
-        public void TestRepositoryWriteToDataAreaTable()
+        public void DAL_TST_RepositoryWriteToDataAreaTable()
         {
             var DARepo = new DataRepository<DATAAREA>();
             DATAAREA DA = new DATAAREA();
@@ -35,7 +35,7 @@ namespace DALTest
             DARepo.Create(DA);
         }
         [TestMethod]
-        public void TestRepositoryWriteToMbsWbWebUserTable()
+        public void DAL_TST_RepositoryWriteToMbsWbWebUserTable()
         {
             var MWCRepo = new DataRepository<MBSWBWEBUSERCONTACT>();
             MBSWBWEBUSERCONTACT MWC = new MBSWBWEBUSERCONTACT();

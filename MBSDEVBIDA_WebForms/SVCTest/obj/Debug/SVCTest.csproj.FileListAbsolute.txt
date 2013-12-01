@@ -22,3 +22,5 @@ C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\obj\Debug\SVCTest.csprojResolveAssemblyReference.cache
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\obj\Debug\SVCTest.dll
 C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\obj\Debug\SVCTest.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\bin\Debug\SVC.dll
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SVCTest\bin\Debug\SVC.pdb

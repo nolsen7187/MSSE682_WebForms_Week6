@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Xml;
 
-using SVC;
 using DAL;
 
 namespace SVC
@@ -40,7 +39,7 @@ namespace SVC
                 Act(Repo, ClassObject, ActionType);
             }
         }
-        public void Act(IDataRepository DataRepo, dynamic ClassObject, int ActionType)
+        public void Act(DAL.IDataRepository DataRepo, dynamic ClassObject, int ActionType)
         {
             switch (ActionType)
             {

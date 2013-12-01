@@ -59,7 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SVC_TST.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +73,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{cb5dba12-278d-4551-bce5-f5d1b6b8baf8}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SVC\SVC.csproj">
+      <Project>{9401591c-122b-4e8e-a8a3-82ed52002f2f}</Project>
+      <Name>SVC</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

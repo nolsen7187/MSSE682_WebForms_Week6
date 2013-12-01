@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using DAL;
-using PRS.BUS;
+using BUS;
 
 public partial class Registration : System.Web.UI.Page
 {
