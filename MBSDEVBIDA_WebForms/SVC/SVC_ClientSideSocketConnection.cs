@@ -12,56 +12,53 @@ namespace SVC
 {
     public class SVC_ClientSideSocketConnection
     {
-        static void Main(string[] args)
+        private string password = "dbrees";
+        private string username = "dbrees";
+
+        static Socket sck;
+
+        public void Client()
         {
-        /*    Socket socket = new Socket
-            (AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
+
             try
             {
-                IPEndPoint ipEndPoint = new IPEndPoint
-                (IPAddress.Parse("127.0.01"), 8081);
-                socket.Connect(ipEndPoint);
-                NetworkStream stream = new NetworkStream(socket);
-                BinaryWriter writer = new BinaryWriter(stream);
-                BinaryReader reader = new BinaryReader(stream);
-                writer.Write("dbrees/dbrees");
-                bool result = reader.ReadBoolean();
+                sck.Connect(ipEndPoint);
+            }
+            catch
+            {
+                Console.Write("Failed to establish connection with authentication server!");
+            }
+            byte[] data = Encoding.ASCII.GetBytes(username);
+            sck.Send(data);
+            Console.Write("Data sent!");
+            Console.Read();
+            sck.Close();
+            //sck.Bind(ipEndPoint);
+            /*TcpClient tcpClient = new TcpClient();
+            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
+            try
+            {
+                tcpClient.Connect(ipEndPoint);
+                NetworkStream networkStream = tcpClient.GetStream();
+                byte[] inStream = new byte[10025];
+
+                networkStream.Read(inStream, 0, (int)tcpClient.ReceiveBufferSize);
+                string returndata = System.Text.Encoding.ASCII.GetString(inStream);
+                Console.WriteLine("Data from Server : " + returndata);
+                password = "dbrees";
+                username = "dbrees";
+                byte[] msg = Encoding.ASCII.GetBytes("admin");
+                networkStream.Write(msg, 0, msg.Length);
+                networkStream.Flush();
+
+
             }
             catch (SocketException e)
             {
                 Console.WriteLine("SocketException: {0}", e);
             }
-        */
-        }
-        public void Client()
-        {
-            TcpClient tcpClient = new TcpClient();
-            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 8081);
-            try
-            {
-                tcpClient.Connect(ipEndPoint);
-                NetworkStream ns = tcpClient.GetStream();
-
-
-                byte[] inStream = new byte[10025];
-                ns.Read(inStream, 0, (int)tcpClient.ReceiveBufferSize);
-                string returndata = System.Text.Encoding.ASCII.GetString(inStream);
-                Console.WriteLine("Data from Server : " + returndata);
-                //string password = "admin";
-
-
-
-                byte[] msg = Encoding.ASCII.GetBytes("admin");
-                ns.Write(msg, 0, msg.Length);
-                ns.Flush();
-
-
-            }
-            catch
-            {
-
-            }
-
             /*Socket socket = new Socket
             (AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
