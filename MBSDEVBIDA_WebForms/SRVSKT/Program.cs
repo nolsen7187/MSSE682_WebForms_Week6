@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization.Formatters;
 
 namespace SRVSKT
 {
@@ -16,27 +14,73 @@ namespace SRVSKT
     {
         static void Main(string[] args)
         {
-            TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8081);
-            TcpClient tcpClient = listener.AcceptTcpClient();//High Level Listening 
-            NetworkStream stream = tcpClient.GetStream();//For TCP
-
-            BinaryReader reader = new BinaryReader(stream);// Create binary reader based off of stream
-            BinaryWriter writer = new BinaryWriter(stream);// Create binary writer based off of stream
-
-            BinaryFormatter formatter = new BinaryFormatter();//Should pass in stream
-            formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
-
-            tcpClient.Close();
-
-            Socket socket = listener.AcceptSocket(); // Low Level Listening 
-            NetworkStream socketStream = new NetworkStream(socket); // For Socket
-
-            BinaryReader socketReader = new BinaryReader(socketStream);// Create binary reader based off of stream
-            BinaryWriter socketWriter = new BinaryWriter(socketStream);// Create binary writer based off of stream
-
-            socket.Shutdown(SocketShutdown.Both);
-            socket.Close(); // or tcpClient.Close()
-
+            MyListener listener = new MyListener();
+            listener.Listen();
         }
     }
+    public class MyListener
+    {
+        static byte[] buffer { get; set; }
+        static Socket sck;
+
+        public void Listen()
+        {
+            sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
+            sck.Bind(ipEndPoint);
+            sck.Listen(100);
+
+            Socket accepted = sck.Accept();
+            buffer = new byte[accepted.SendBufferSize];
+            int bytesRead = accepted.Receive(buffer);
+            byte[] formatted = new byte[bytesRead];
+            for (int i = 0; i < bytesRead; i++)
+            {
+                formatted[i] = buffer[i];
+            }
+
+
+            string strData = Encoding.ASCII.GetString(formatted);
+            Console.WriteLine(strData);
+            Console.Read();
+            sck.Close();
+            accepted.Close();
+
+
+            /* TcpListener listener = null;
+             try
+             {
+                 Int32 port = 7187;
+                 IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
+                 listener = new TcpListener(ipAddr, port);
+                 // Start listening for incoming client requests
+                 listener.Start();
+                 while (true)
+                 {
+                     Console.Write("Waiting for a connection... ");
+                     TcpClient tcpClient = listener.AcceptTcpClient();
+                     // get a stream to read/write
+                     NetworkStream stream = tcpClient.GetStream();
+                     // read the data sent by the client.
+                     BinaryReader reader = new BinaryReader(stream);
+                     BinaryWriter writer = new BinaryWriter(stream);
+                     string credentials = reader.ReadString();
+                     Console.WriteLine("credentials: " + credentials);
+                     // process the credentials and return a true / false
+                     // close the socket when you’re done using it
+                     tcpClient.Close();
+                 }
+             }
+             catch(SocketException e)
+             {
+             Console.WriteLine("SocketException: {0}", e);
+             }
+             finally
+             {
+             // Stop listening for new clients
+             listener.Stop();
+             }*/
+        }
+    }
+
 }

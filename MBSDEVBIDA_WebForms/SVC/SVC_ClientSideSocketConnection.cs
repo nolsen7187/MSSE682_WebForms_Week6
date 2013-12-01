@@ -12,12 +12,12 @@ namespace SVC
 {
     public class SVC_ClientSideSocketConnection
     {
-        private string password = "dbrees";
-        private string username = "dbrees";
+        private string password = "";
+        private string username = "";
 
         static Socket sck;
 
-        public void Client()
+        public void Client(string WebLogon, string Password)
         {
             sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
@@ -30,7 +30,10 @@ namespace SVC
             {
                 Console.Write("Failed to establish connection with authentication server!");
             }
-            byte[] data = Encoding.ASCII.GetBytes(username);
+            password = Password;
+            username = WebLogon;
+
+            byte[] data = Encoding.ASCII.GetBytes(@"<?xml version='1.0'?><xmlroot><USERNAME>" + username + "</USERNAME>" + "<PASSWORD>" + password + "</PASSWORD></xmlroot>");
             sck.Send(data);
             Console.Write("Data sent!");
             Console.Read();

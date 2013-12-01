@@ -73,7 +73,7 @@ namespace BUS
         public void TestAuthenticationServer()
         {
             svcClientSideSocketConnection = new SVC_ClientSideSocketConnection();
-            svcClientSideSocketConnection.Client();
+            svcClientSideSocketConnection.Client(logon, password);
 
         }
     }
