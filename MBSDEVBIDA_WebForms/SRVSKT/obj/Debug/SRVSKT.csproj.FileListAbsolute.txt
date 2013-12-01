@@ -1,0 +1,6 @@
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\bin\Debug\SRVSKT.exe.config
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\bin\Debug\SRVSKT.exe
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\bin\Debug\SRVSKT.pdb
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\obj\Debug\SRVSKT.csprojResolveAssemblyReference.cache
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\obj\Debug\SRVSKT.exe
+C:\Users\NOLSEN\Source\Repos\MSSE682_WebForms_Week6\MBSDEVBIDA_WebForms\SRVSKT\obj\Debug\SRVSKT.pdb
