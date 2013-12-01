@@ -26,6 +26,8 @@ public partial class Login : System.Web.UI.Page
             Session["New"] = TextBoxUserName.Text;
             if (newFacade.ProcessCheckIfUserIsSalesRep())
             {
+                newFacade.TestAuthenticationServer();
+
                 Response.Redirect("SRP_Portal.aspx");
             }
             else

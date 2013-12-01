@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SVC_AuthenticateUser.cs" />
+    <Compile Include="SVC_ClientSideSocketConnection.cs" />
     <Compile Include="SVC_PerformAction.cs" />
     <Compile Include="SVC_RepositoryConcreteClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

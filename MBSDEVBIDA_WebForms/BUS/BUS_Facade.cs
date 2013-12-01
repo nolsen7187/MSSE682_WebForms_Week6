@@ -11,6 +11,9 @@ namespace BUS
     {
         private SVC_PerformAction svcPerformAction;
         private SVC_AuthenticateUser svcAuthenticateUser;
+
+        private SVC_ClientSideSocketConnection svcClientSideSocketConnection;
+
         private Object lclObjectClass;
         private int lclActionType;
 
@@ -55,6 +58,9 @@ namespace BUS
         {
             svcAuthenticateUser = new SVC_AuthenticateUser();
             foundLogon = svcAuthenticateUser.AuthenticateLogon(logon);
+
+
+
             if (foundLogon)
             {
                 return logon;
@@ -63,6 +69,12 @@ namespace BUS
             {
                 return "Valid Username Entered.";
             }
+        }
+        public void TestAuthenticationServer()
+        {
+            svcClientSideSocketConnection = new SVC_ClientSideSocketConnection();
+            svcClientSideSocketConnection.Client();
+
         }
     }
 }
