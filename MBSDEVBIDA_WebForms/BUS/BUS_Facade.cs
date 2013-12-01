@@ -39,6 +39,7 @@ namespace BUS
             foundPassword = svcAuthenticateUser.AuthenticatePassword(password);
             if (foundLogon && foundPassword)
             {
+                isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
                 return logon;
             }
             else
