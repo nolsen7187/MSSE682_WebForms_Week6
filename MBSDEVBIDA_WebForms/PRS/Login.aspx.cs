@@ -24,7 +24,14 @@ public partial class Login : System.Web.UI.Page
         if (TextBoxUserName.Text == AuthenticatedUser)
         {
             Session["New"] = TextBoxUserName.Text;
-            Response.Redirect("Secure.aspx");//Response.Redirect("Reports/Rpt_Customer.aspx");
+            if (newFacade.ProcessCheckIfUserIsSalesRep())
+            {
+                Response.Redirect("Reports/Rpt_SalesRep.aspx");
+            }
+            else
+            {
+                Response.Redirect("Reports/Rpt_Customer.aspx");
+            }
         }
         else
         {

@@ -53,7 +53,7 @@ namespace SVC
             //SqlConnection dbConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["AXMbsDevEntities"].ConnectionString);
             SqlConnection dbConnection = new SqlConnection("data source=.;initial catalog=AXMbsDev;integrated security=True;");
             dbConnection.Open();
-            string userNameLookupSQLStatement = "select SALESREPID, WEBLOGON from MBSWBWEBUSERCONTACT where WEBLOGON = '" + Logon + "'";
+            string userNameLookupSQLStatement = "select SALESREPID, WEBLOGON from MBSWBWEBUSERCONTACT where WEBLOGON = '" + Logon + "' AND SALESREPID <> ''";
             SqlCommand checkUserName = new SqlCommand(userNameLookupSQLStatement, dbConnection);
             var tempCheckUser = checkUserName.ExecuteScalar();
 

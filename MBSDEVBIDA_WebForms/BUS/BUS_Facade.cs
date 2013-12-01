@@ -39,13 +39,17 @@ namespace BUS
             foundPassword = svcAuthenticateUser.AuthenticatePassword(password);
             if (foundLogon && foundPassword)
             {
-                isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
-                return logon;
+                 return logon;
             }
             else
             {
                 return "Invalid Password Entered";
             }
+        }
+        public bool ProcessCheckIfUserIsSalesRep()
+        {
+            isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
+            return isSalesRep;            
         }
         public string ProcessLogonNameAuthenticity()
         {
@@ -53,7 +57,6 @@ namespace BUS
             foundLogon = svcAuthenticateUser.AuthenticateLogon(logon);
             if (foundLogon)
             {
-                isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
                 return logon;
             }
             else
