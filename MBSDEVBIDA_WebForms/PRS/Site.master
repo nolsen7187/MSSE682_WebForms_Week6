@@ -63,9 +63,6 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a id="registerLink" runat="server" href="~/Registration">Register</a></li>
                         <li><a id="loginLink" runat="server" href="~/Login">Log in</a></li>
-                        <li><a id="adminLink" runat="server" href="~/Admin">Admin</a></li>
-                        <li><a id="a1" runat="server" href="~/DataGridList">DataGrids</a></li>
-                        <li><a id="a3" runat="server" href="~/ReportList">Reports</a></li>
                     </ul>
                 </nav>
             </div>

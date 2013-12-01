@@ -26,11 +26,11 @@ public partial class Login : System.Web.UI.Page
             Session["New"] = TextBoxUserName.Text;
             if (newFacade.ProcessCheckIfUserIsSalesRep())
             {
-                Response.Redirect("Reports/Rpt_SalesRep.aspx");
+                Response.Redirect("SRP_Portal.aspx");
             }
             else
             {
-                Response.Redirect("Reports/Rpt_Customer.aspx");
+                Response.Redirect("CUS_Portal.aspx");
             }
         }
         else
