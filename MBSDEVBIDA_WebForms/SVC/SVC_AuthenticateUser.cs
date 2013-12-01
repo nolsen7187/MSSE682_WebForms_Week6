@@ -48,5 +48,23 @@ namespace SVC
                 return false;
             }
         }
+        public bool IsSalesRep(string Logon)
+        {
+            //SqlConnection dbConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["AXMbsDevEntities"].ConnectionString);
+            SqlConnection dbConnection = new SqlConnection("data source=.;initial catalog=AXMbsDev;integrated security=True;");
+            dbConnection.Open();
+            string userNameLookupSQLStatement = "select SALESREPID, WEBLOGON from MBSWBWEBUSERCONTACT where WEBLOGON = '" + Logon + "'";
+            SqlCommand checkUserName = new SqlCommand(userNameLookupSQLStatement, dbConnection);
+            var tempCheckUser = checkUserName.ExecuteScalar();
+
+            if (tempCheckUser != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }	
 }

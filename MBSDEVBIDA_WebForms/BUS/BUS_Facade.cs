@@ -15,7 +15,7 @@ namespace BUS
         private int lclActionType;
 
         private String logon, password;
-        private bool foundLogon, foundPassword;
+        private bool foundLogon, foundPassword, isSalesRep;
 
         public BUS_Facade(Object Object, int ActionType)
         {
@@ -52,6 +52,7 @@ namespace BUS
             foundLogon = svcAuthenticateUser.AuthenticateLogon(logon);
             if (foundLogon)
             {
+                isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
                 return logon;
             }
             else
