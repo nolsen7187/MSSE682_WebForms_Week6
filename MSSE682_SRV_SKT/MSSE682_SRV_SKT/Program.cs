@@ -69,8 +69,8 @@ namespace MSSE682_SRV_SKT
                 }
             }
 
-            //Console.Write(strData + "\r\n");
-            //Console.Read();
+            Console.Write(strData + "\r\n");
+            Console.Read();
 
             bus = new BUS_Facade(username, password);
             userAuthenticated = bus.ProcessAuthenticationRequest();
@@ -93,7 +93,7 @@ namespace MSSE682_SRV_SKT
             sck.Close();
             accepted.Close();
 
-
+           
            /* TcpListener listener = null;
             try
             {
