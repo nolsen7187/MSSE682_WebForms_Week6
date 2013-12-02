@@ -51,6 +51,7 @@ namespace BUS
         }
         public bool ProcessCheckIfUserIsSalesRep()
         {
+            svcAuthenticateUser = new SVC_AuthenticateUser();
             isSalesRep = svcAuthenticateUser.IsSalesRep(logon);
             return isSalesRep;            
         }

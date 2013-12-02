@@ -41,8 +41,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVC", "SVC\SVC.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVCTest", "SVCTest\SVCTest.csproj", "{8DFE4CFA-E48F-41CD-94C1-4E1BF5F1EA5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRVSKT", "SRVSKT\SRVSKT.csproj", "{C7985236-59B4-4104-B246-8C624A7D1767}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,10 +75,6 @@ Global
 		{8DFE4CFA-E48F-41CD-94C1-4E1BF5F1EA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DFE4CFA-E48F-41CD-94C1-4E1BF5F1EA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DFE4CFA-E48F-41CD-94C1-4E1BF5F1EA5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7985236-59B4-4104-B246-8C624A7D1767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7985236-59B4-4104-B246-8C624A7D1767}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7985236-59B4-4104-B246-8C624A7D1767}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7985236-59B4-4104-B246-8C624A7D1767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
