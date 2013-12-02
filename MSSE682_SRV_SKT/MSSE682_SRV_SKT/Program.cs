@@ -38,7 +38,7 @@ namespace MSSE682_SRV_SKT
             buffer = new byte[accepted.SendBufferSize];
             int bytesRead = accepted.Receive(buffer);
             byte[] formatted = new byte[bytesRead];
-            for(int i = 0; i < bytesRead; i++)
+            for (int i = 0; i < bytesRead; i++)
             {
                 formatted[i] = buffer[i];
             }
@@ -69,13 +69,17 @@ namespace MSSE682_SRV_SKT
                 }
             }
 
-            Console.Write(strData + "\r\n");
-            Console.Read();
+            //Console.Write(strData + "\r\n");
+            //Console.Read();
 
             bus = new BUS_Facade(username, password);
             userAuthenticated = bus.ProcessAuthenticationRequest();
 
+            //sck.Shutdown(SocketShutdown.Both);
+            //sck.Disconnect(true);
+
             sendSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //IPEndPoint sendIpEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7188);
             IPEndPoint sendIpEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7188);
             try
             {
@@ -89,44 +93,49 @@ namespace MSSE682_SRV_SKT
             byte[] sendBack = Encoding.ASCII.GetBytes(userAuthenticated);
 
             sendSck.Send(sendBack);
-            sendSck.Close();
+            Console.Write("Sent data back");
+            Console.Read();
+            //sendSck.Shutdown(SocketShutdown.Both);
+            //sendSck.Disconnect(true);
+
+        
             sck.Close();
             accepted.Close();
-
-           
-           /* TcpListener listener = null;
-            try
-            {
-                Int32 port = 7187;
-                IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
-                listener = new TcpListener(ipAddr, port);
-                // Start listening for incoming client requests
-                listener.Start();
-                while (true)
-                {
-                    Console.Write("Waiting for a connection... ");
-                    TcpClient tcpClient = listener.AcceptTcpClient();
-                    // get a stream to read/write
-                    NetworkStream stream = tcpClient.GetStream();
-                    // read the data sent by the client.
-                    BinaryReader reader = new BinaryReader(stream);
-                    BinaryWriter writer = new BinaryWriter(stream);
-                    string credentials = reader.ReadString();
-                    Console.WriteLine("credentials: " + credentials);
-                    // process the credentials and return a true / false
-                    // close the socket when you’re done using it
-                    tcpClient.Close();
-                }
-            }
-            catch(SocketException e)
-            {
-            Console.WriteLine("SocketException: {0}", e);
-            }
-            finally
-            {
-            // Stop listening for new clients
-            listener.Stop();
-            }*/
+            sendSck.Close();
+            return;
+            /* TcpListener listener = null;
+             try
+             {
+                 Int32 port = 7187;
+                 IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
+                 listener = new TcpListener(ipAddr, port);
+                 // Start listening for incoming client requests
+                 listener.Start();
+                 while (true)
+                 {
+                     Console.Write("Waiting for a connection... ");
+                     TcpClient tcpClient = listener.AcceptTcpClient();
+                     // get a stream to read/write
+                     NetworkStream stream = tcpClient.GetStream();
+                     // read the data sent by the client.
+                     BinaryReader reader = new BinaryReader(stream);
+                     BinaryWriter writer = new BinaryWriter(stream);
+                     string credentials = reader.ReadString();
+                     Console.WriteLine("credentials: " + credentials);
+                     // process the credentials and return a true / false
+                     // close the socket when you’re done using it
+                     tcpClient.Close();
+                 }
+             }
+             catch(SocketException e)
+             {
+             Console.WriteLine("SocketException: {0}", e);
+             }
+             finally
+             {
+             // Stop listening for new clients
+             listener.Stop();
+             }*/
         }
     }
 

@@ -39,8 +39,11 @@ namespace SVC
             sck.Send(data);
             Console.Write("Data sent!");
             Console.Read();
-            //Send Data from Application End
             
+            //sck.Shutdown(SocketShutdown.Both);
+            //sck.Disconnect(true);
+            //Send Data from Application End
+
             //Receive Response
             receiveSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint receiveIpEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7188);
@@ -56,6 +59,8 @@ namespace SVC
                 formatted[i] = receiveBuffer[i];
             }
             string strData = Encoding.ASCII.GetString(formatted);
+            //receiveSck.Shutdown(SocketShutdown.Both);
+            //receiveSck.Disconnect(true);
 
             receiveSck.Close();
             sck.Close();
