@@ -14,11 +14,12 @@ namespace SVC
     {
         private string password = "";
         private string username = "";
-
-        static Socket sck;
+        static byte[] receiveBuffer { get; set; }
+        static Socket sck, receiveSck;
 
         public void Client(string WebLogon, string Password)
         {
+            //Send Data from Application
             sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
 
@@ -37,7 +38,27 @@ namespace SVC
             sck.Send(data);
             Console.Write("Data sent!");
             Console.Read();
+            //Send Data from Application End
+            
+            //Receive Response
+            receiveSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint receiveIpEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7188);
+            receiveSck.Bind(receiveIpEndPoint);
+            receiveSck.Listen(100);
+
+            Socket accepted = receiveSck.Accept();
+            receiveBuffer = new byte[accepted.SendBufferSize];
+            int bytesRead = accepted.Receive(receiveBuffer);
+            byte[] formatted = new byte[bytesRead];
+            for (int i = 0; i < bytesRead; i++)
+            {
+                formatted[i] = receiveBuffer[i];
+            }
+            string strData = Encoding.ASCII.GetString(formatted);
+
+            receiveSck.Close();
             sck.Close();
+            sck.Receive(
             //sck.Bind(ipEndPoint);
             /*TcpClient tcpClient = new TcpClient();
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
