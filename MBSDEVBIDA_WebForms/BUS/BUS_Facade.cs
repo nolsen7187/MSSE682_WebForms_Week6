@@ -59,8 +59,6 @@ namespace BUS
             svcAuthenticateUser = new SVC_AuthenticateUser();
             foundLogon = svcAuthenticateUser.AuthenticateLogon(logon);
 
-
-
             if (foundLogon)
             {
                 return logon;
@@ -70,10 +68,20 @@ namespace BUS
                 return "Valid Username Entered.";
             }
         }
-        public void TestAuthenticationServer()
+        //Added to authenticate user via authentication server.
+        public string TestAuthenticationServer()
         {
             svcClientSideSocketConnection = new SVC_ClientSideSocketConnection();
-            svcClientSideSocketConnection.Client(logon, password);
+            foundLogon = svcClientSideSocketConnection.Client(logon, password);
+
+            if (foundLogon)
+            {
+                return logon;
+            }
+            else
+            {
+                return "Valid Username Entered.";
+            }            
 
         }
     }

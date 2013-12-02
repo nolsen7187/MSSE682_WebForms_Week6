@@ -17,7 +17,7 @@ namespace SVC
         static byte[] receiveBuffer { get; set; }
         static Socket sck, receiveSck;
 
-        public void Client(string WebLogon, string Password)
+        public bool Client(string WebLogon, string Password)
         {
             //Send Data from Application
             sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -30,6 +30,7 @@ namespace SVC
             catch
             {
                 Console.Write("Failed to establish connection with authentication server!");
+                return false;
             }
             password = Password;
             username = WebLogon;
@@ -58,7 +59,10 @@ namespace SVC
 
             receiveSck.Close();
             sck.Close();
-            sck.Receive(
+            accepted.Close();
+
+            return true;
+            //sck.Receive(
             //sck.Bind(ipEndPoint);
             /*TcpClient tcpClient = new TcpClient();
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.01"), 7187);
